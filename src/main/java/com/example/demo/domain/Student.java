@@ -1,7 +1,14 @@
 package com.example.demo.domain;
 
+
+import javax.persistence.*;
+
+@Entity
+
 public class Student {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstname;
     private String lastname;
@@ -21,23 +28,26 @@ public class Student {
         return id;
     }
 
-    public void setId(Long id) {
+    public Student setId(Long id) {
         this.id = id;
+        return  this;
     }
 
     public String getFirstname() {
         return firstname;
     }
 
-    public void setFirstname(String firstname) {
+    public Student setFirstname(String firstname) {
         this.firstname = firstname;
+        return this;
     }
 
     public String getLastname() {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
+    public Student setLastname(String lastname) {
         this.lastname = lastname;
+        return this;
     }
 }
